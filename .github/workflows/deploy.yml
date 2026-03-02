@@ -1,5 +1,10 @@
 name: Deploy to GitHub Pages
 
+# grant pages write permissions to the workflow
+permissions:
+  pages: write
+  id-token: write
+
 on:
   push:
     branches:

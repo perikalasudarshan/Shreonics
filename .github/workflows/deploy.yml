@@ -26,5 +26,9 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Using a personal access token avoids permission issues that sometimes
+          # occur with the default GITHUB_TOKEN, especially for first-time
+          # branch creation.  Create a token with `repo` scope and store it as
+          # the repository secret `GH_PAGES_TOKEN`.
+          github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./dist

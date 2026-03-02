@@ -8,18 +8,21 @@ import { About } from "./components/About";
 import { WhyChooseUs } from "./components/WhyChooseUs";
 import { Contact } from "./components/Contact";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: Layout,
-    children: [
-      { index: true, Component: Home },
-      { path: "products", Component: Products },
-      { path: "research", Component: Research },
-      { path: "services", Component: Services },
-      { path: "about", Component: About },
-      { path: "why-choose-us", Component: WhyChooseUs },
-      { path: "contact", Component: Contact },
-    ],
-  },
-]);
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      Component: Layout,
+      children: [
+        { index: true, Component: Home },
+        { path: "products", Component: Products },
+        { path: "research", Component: Research },
+        { path: "services", Component: Services },
+        { path: "about", Component: About },
+        { path: "why-choose-us", Component: WhyChooseUs },
+        { path: "contact", Component: Contact },
+      ],
+    },
+  ],
+  { basename: "/Shreonics" }
+);

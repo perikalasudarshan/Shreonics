@@ -30,6 +30,21 @@ jobs:
 
 6. After deployment, your site will be available at `https://<username>.github.io/<repo>/`.
 
+## Automated deployment with GitHub Actions
+
+A workflow is included in `.github/workflows/deploy.yml` that builds and publishes the `dist` directory every time a commit is pushed to the `main` branch. Simply:
+
+```bash
+# push your changes to main
+git checkout main
+git merge dev        # or whatever branch you work on
+git push origin main
+```
+
+GitHub will then run the job, and once it completes the Pages site will update automatically.
+
+You no longer need to manually copy `dist/` into any branch; the action handles it for you.
+
 ---
 
 ## Manual Deployment

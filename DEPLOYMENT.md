@@ -52,7 +52,17 @@ jobs:
 
 ## Automated deployment with GitHub Actions
 
-A workflow is included in `.github/workflows/deploy.yml` that builds and publishes the `dist` directory every time a commit is pushed to the `main` branch. Simply:
+A workflow is included in `.github/workflows/deploy.yml` that builds and publishes the `dist` directory every time a commit is pushed to the `main` branch. Before pushing, ensure the base path is correct:
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  base: '/Shreonics/', // use your repository name
+  // ...rest of config
+});
+```
+
+Once set, rebuild and push to trigger the workflow. Simply:
 
 ```bash
 # push your changes to main

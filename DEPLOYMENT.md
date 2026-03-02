@@ -71,7 +71,19 @@ git merge dev        # or whatever branch you work on
 git push origin main
 ```
 
-GitHub will then run the job, and once it completes the Pages site will update automatically.
+ GitHub will then run the job, and once it completes the Pages site will update automatically.
+
+### Routing notes for Pages
+
+This project now uses a **hash-based router** (`createHashRouter`) instead of
+browser history. Hash routing avoids all base-path problems on GitHub Pages
+and eliminates the "No routes matched location \"/Shreonics/\"" error you
+were seeing earlier.  When visiting the site the URL will look like
+`https://<username>.github.io/Shreonics/#/` (or `#/products`, etc.), and the
+router handles everything entirely on the client.
+
+No additional configuration is needed after the switch; simply push to
+`main` to rebuild.
 
 You no longer need to manually copy `dist/` into any branch; the action handles it for you.
 

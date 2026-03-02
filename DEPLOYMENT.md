@@ -8,8 +8,19 @@
 > 1. On GitHub, go to **Settings > Developer settings > Personal access tokens**
 >    and generate a token with at least `repo` scope.
 > 2. In your repository, open **Settings > Secrets > Actions** and create a
->    new secret named `GH_PAGES_TOKEN` with the value of your token.
+>    new secret named `GH_PAGES_TOKEN` with the value of your token.  Make sure
+>    the token is issued by the same user that owns the repository and is not
+>    revoked or expired.
 > 3. The workflow is already configured to use this secret when publishing.
+>
+> **Troubleshooting:** If you still see a 403 error (`denied to perikalasudarshan`
+> or similar), verify:
+>
+> * The secret name is exactly `GH_PAGES_TOKEN`.
+> * The token includes the `repo` scope (and `workflow` scope if an org
+>   repo).
+> * The GitHub user who created the token has write access to the repo.
+> * There are no organization-level restrictions blocking Actions.
 
 3. In your repo, go to Settings > Pages.
 4. Set the source to the `dist` folder (from the `gh-pages` branch or main branch, depending on your workflow).

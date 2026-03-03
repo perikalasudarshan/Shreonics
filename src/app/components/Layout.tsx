@@ -1,7 +1,7 @@
 import { Outlet, Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-// Removed figma asset import. Use text placeholder for logo.
+import logo from "../../assets/IMG_20260105_182409.jpg";
 
 export function Layout() {
   const location = useLocation();
@@ -31,8 +31,8 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3 font-bold text-xl text-[#0055a5]">
-              Shreonics Solutions
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Shreonics Solutions" className="h-16 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -97,8 +97,8 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <Link to="/" className="flex items-center space-x-3 mb-4 font-bold text-lg text-[#0055a5]">
-                Shreonics Solutions
+              <Link to="/" className="flex items-center mb-4">
+                <img src={logo} alt="Shreonics Solutions" className="h-12 w-auto" />
               </Link>
               <p className="text-gray-400 max-w-md">
                 Engineering practical electronics & assistive systems. Focused on embedded systems, power electronics, robotics, and prosthetic technology.

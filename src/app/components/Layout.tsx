@@ -31,8 +31,11 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center gap-3">
               <img src={logo} alt="Shreonics Solutions" className="h-16 w-auto" />
+              <span className="text-xl font-bold bg-gradient-to-r from-[#00a859] to-[#0055a5] bg-clip-text text-transparent hidden sm:inline">
+                Shreonics Solutions
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -97,8 +100,13 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <Link to="/" className="flex items-center mb-4">
+              <Link to="/" className="flex items-center gap-3 mb-4">
                 <img src={logo} alt="Shreonics Solutions" className="h-12 w-auto" />
+                <div>
+                  <div className="text-lg font-bold bg-gradient-to-r from-[#00a859] to-[#0055a5] bg-clip-text text-transparent">
+                    Shreonics Solutions
+                  </div>
+                </div>
               </Link>
               <p className="text-gray-400 max-w-md">
                 Engineering practical electronics & assistive systems. Focused on embedded systems, power electronics, robotics, and prosthetic technology.

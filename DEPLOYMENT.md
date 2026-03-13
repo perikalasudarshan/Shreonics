@@ -73,6 +73,31 @@ git push origin main
 
  GitHub will then run the job, and once it completes the Pages site will update automatically.
 
+### Custom domain note
+
+If you are using a custom domain (e.g. `https://www.shreonics.com/`), your
+site is served from the domain root, so the Vite base **must** be `/`:
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  base: '/',
+});
+```
+
+If you later switch back to the default GitHub Pages URL
+`https://<username>.github.io/<repo>/`, change it back to `'/Shreonics/'`.
+
+You can now build for either target without editing config:
+
+```bash
+# custom domain (root)
+npm run build
+
+# default GitHub Pages URL
+npm run build:gh
+```
+
 ### Routing notes for Pages
 
 This project now uses a **hash-based router** (`createHashRouter`) instead of

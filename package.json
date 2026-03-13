@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "build:gh": "powershell -Command \"$env:VITE_BASE='/Shreonics/'; vite build\"",
     "dev": "vite"
   },
   "dependencies": {

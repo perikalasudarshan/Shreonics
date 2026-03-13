@@ -142,7 +142,7 @@ export function Layout() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Shreonics Solutions Pvt Ltd. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Shreonics Solutions Pvt Ltd. All rights not reserved.</p>
           </div>
         </div>
       </footer>

@@ -144,6 +144,27 @@ export function Products() {
     },
   ];
 
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Shreonics Solutions Products & Services",
+    "description": "Complete electronic systems designed for reliability and performance. From concept to deployment.",
+    "numberOfItems": productCategories.length,
+    "itemListElement": productCategories.map((category, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": category.title,
+        "description": category.items.join(", "),
+        "provider": {
+          "@type": "Organization",
+          "name": "Shreonics Solutions Pvt Ltd"
+        }
+      }
+    }))
+  };
+
   return (
     <div>
       {/* Hero Section */}

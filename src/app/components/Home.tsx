@@ -1,5 +1,6 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Cpu, Zap, Activity, Gauge, HeartPulse, ArrowRight } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export function Home() {
   const capabilities = [
@@ -35,8 +36,78 @@ export function Home() {
     },
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Shreonics Solutions Pvt Ltd",
+    "url": "https://www.shreonics.com",
+    "logo": "https://www.shreonics.com/src/assets/IMG_20260105_182409.png",
+    "description": "Engineering practical electronics & assistive systems. Specializing in embedded systems, power electronics, robotics, and prosthetic technology.",
+    "foundingDate": "2020",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-7386402694",
+      "email": "shreonics@gmail.com",
+      "contactType": "customer service"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      // Add social media URLs if available
+    ],
+    "knowsAbout": [
+      "Embedded Systems",
+      "Power Electronics",
+      "Robotics",
+      "Prosthetic Technology",
+      "Mechanical Engineering",
+      "PCB Design",
+      "Firmware Development"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Engineering Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Embedded Systems Development",
+            "description": "Custom ARM-based controllers and automation solutions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Power Electronics Design",
+            "description": "DC-DC converters, protected modules, and control systems"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Robotics & Assistive Technology",
+            "description": "Robotic systems and prosthetic technology development"
+          }
+        }
+      ]
+    }
+  };
+
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>Shreonics Solutions - Engineering Practical Electronics & Assistive Systems</title>
+        <meta name="description" content="Shreonics Solutions specializes in embedded systems, power electronics, robotics, and assistive technologies. We develop reliable electronic systems for industrial and medical applications." />
+        <meta name="keywords" content="embedded systems, power electronics, robotics, prosthetics, assistive technology, electronics engineering, PCB design" />
+        <link rel="canonical" href="https://www.shreonics.com/" />
+      </Helmet>
+
+      <div>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-[#00a859] to-[#0055a5] text-white py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -182,5 +253,6 @@ export function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,5 +1,16 @@
 import { Cpu, Gauge, Zap, Bot, ClipboardCheck } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import image1 from "../../assets/image1.png";
+import image2 from "../../assets/image2.png";
+import image3 from "../../assets/image3.png";
+import image4 from "../../assets/image4.png";
+import image5 from "../../assets/image5.png";
+import image6 from "../../assets/image6.png";
+import image7 from "../../assets/image7.png";
+import image8 from "../../assets/image8.png";
+import image9 from "../../assets/image9.png";
+import image10 from "../../assets/image10.png";
+import image11 from "../../assets/image11.png";
 
 export function Products() {
   const productCategories = [
@@ -51,6 +62,85 @@ export function Products() {
         "Burn-in systems",
         "Custom testing setups",
       ],
+    },
+    {
+      icon: Cpu,
+      title: "Mechanical Engineering",
+      items: [
+        "3D CAD modeling and enclosure design",
+        "Structural and thermal simulation",
+        "Prototyping (3D print / CNC)",
+        "Sheet metal and housing fabrication",
+      ],
+    },
+  ];
+
+  const galleryItems = [
+    {
+      src: image1,
+      alt: "Circuit Board Development",
+      title: "Circuit Board Development",
+      subtitle: "Custom PCB design and layout",
+    },
+    {
+      src: image2,
+      alt: "Embedded Systems",
+      title: "Embedded Systems",
+      subtitle: "ARM-based microcontroller boards",
+    },
+    {
+      src: image3,
+      alt: "Testing Equipment",
+      title: "Testing Equipment",
+      subtitle: "Precision measurement and validation",
+    },
+    {
+      src: image4,
+      alt: "Power Electronics",
+      title: "Power Electronics",
+      subtitle: "DC-DC converters and power modules",
+    },
+    {
+      src: image5,
+      alt: "Robotic Systems",
+      title: "Robotic Systems",
+      subtitle: "Prosthetic and assistive technology",
+    },
+    {
+      src: image6,
+      alt: "PCB Manufacturing",
+      title: "PCB Manufacturing",
+      subtitle: "Prototype assembly and production",
+    },
+    {
+      src: image7,
+      alt: "Sensor Technology",
+      title: "Sensor Technology",
+      subtitle: "Measurement and data acquisition",
+    },
+    {
+      src: image8,
+      alt: "Engineering Workspace",
+      title: "Engineering Workspace",
+      subtitle: "In-house development and testing",
+    },
+    {
+      src: image9,
+      alt: "Mechanical Design",
+      title: "Mechanical Design",
+      subtitle: "CAD-driven enclosure and structural design",
+    },
+    {
+      src: image10,
+      alt: "Mechanical Simulation",
+      title: "Mechanical Simulation",
+      subtitle: "FEA/CFD validation for thermal and stress performance",
+    },
+    {
+      src: image11,
+      alt: "Mechanical Prototyping",
+      title: "Mechanical Prototyping",
+      subtitle: "3D printed and CNC prototype support",
     },
   ];
 
@@ -148,117 +238,21 @@ export function Products() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1611663806011-b37e091090f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJvbmljcyUyMGNpcmN1aXQlMjBib2FyZCUyMGRldmVsb3BtZW50fGVufDF8fHx8MTc3MjIxOTc0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Circuit Board Development"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-4 text-white">
-                  <h3 className="font-bold text-lg">Circuit Board Development</h3>
-                  <p className="text-sm text-white/80">Custom PCB design and layout</p>
+            {galleryItems.map((item, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all">
+                <ImageWithFallback
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                  <div className="p-4 text-white">
+                    <h3 className="font-bold text-lg">{item.title}</h3>
+                    <p className="text-sm text-white/80">{item.subtitle}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1743090661056-e51700546169?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbWJlZGRlZCUyMHN5c3RlbXMlMjBtaWNyb2NvbnRyb2xsZXJ8ZW58MXx8fHwxNzcyMjE5NzQxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Embedded Systems"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-4 text-white">
-                  <h3 className="font-bold text-lg">Embedded Systems</h3>
-                  <p className="text-sm text-white/80">ARM-based microcontroller boards</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJvbmljcyUyMHRlc3RpbmclMjBlcXVpcG1lbnQlMjBvc2NpbGxvc2NvcGV8ZW58MXx8fHwxNzcyMjE5NzQyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Testing Equipment"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-4 text-white">
-                  <h3 className="font-bold text-lg">Testing Equipment</h3>
-                  <p className="text-sm text-white/80">Precision measurement and validation</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1672689956124-18666b4cdae4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3dlciUyMGVsZWN0cm9uaWNzJTIwY29udmVydGVyJTIwbW9kdWxlfGVufDF8fHx8MTc3MjIxOTc0Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Power Electronics"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-4 text-white">
-                  <h3 className="font-bold text-lg">Power Electronics</h3>
-                  <p className="text-sm text-white/80">DC-DC converters and power modules</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1581090465357-c8a1f71f0407?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb2JvdGljJTIwYXJtJTIwcHJvc3RoZXRpYyUyMGRldmljZXxlbnwxfHx8fDE3NzIyMTk3NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Robotic Systems"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-4 text-white">
-                  <h3 className="font-bold text-lg">Robotic Systems</h3>
-                  <p className="text-sm text-white/80">Prosthetic and assistive technology</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1729843420196-1ff32bb39db5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxQQ0IlMjBtYW51ZmFjdHVyaW5nJTIwYXNzZW1ibHl8ZW58MXx8fHwxNzcyMjE5NzQyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="PCB Manufacturing"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-4 text-white">
-                  <h3 className="font-bold text-lg">PCB Manufacturing</h3>
-                  <p className="text-sm text-white/80">Prototype assembly and production</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1662776704670-ba57453dfb47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5zb3IlMjBtZWFzdXJlbWVudCUyMGRldmljZSUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzcyMjE5NzQzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Sensor Technology"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-4 text-white">
-                  <h3 className="font-bold text-lg">Sensor Technology</h3>
-                  <p className="text-sm text-white/80">Measurement and data acquisition</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJvbmljcyUyMGVuZ2luZWVyaW5nJTIwd29ya3NwYWNlJTIwc29sZGVyaW5nfGVufDF8fHx8MTc3MjIxOTc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Engineering Workspace"
-                className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                <div className="p-4 text-white">
-                  <h3 className="font-bold text-lg">Engineering Workspace</h3>
-                  <p className="text-sm text-white/80">In-house development and testing</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="mt-12 text-center">

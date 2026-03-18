@@ -2,6 +2,8 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 
 export function Contact() {
+  const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc8EwSNiDhIHHjVt08RUtj235tdxul5aqw7JIMNpoDwJ0P6cA/viewform?usp=dialog";
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -13,9 +15,24 @@ export function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
+
+    // Replace the below entry IDs with actual Google Form entry IDs if you want prefilling.
+    // For now, this opens the Google Form in a new tab.
+    const googleFormPrefill = `${formUrl}`; // Add prefill query here when IDs are known
+
+    window.open(googleFormPrefill, "_blank");
+
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -28,15 +45,6 @@ export function Contact() {
         timeline: "",
       });
     }, 3000);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
   };
 
   return (
@@ -125,20 +133,7 @@ export function Contact() {
                   Project Inquiry Form
                 </h2>
 
-                {submitted ? (
-                  <div className="bg-green-50 border-2 border-green-500 rounded-lg p-8 text-center">
-                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Send className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-green-900 mb-2">
-                      Message Sent!
-                    </h3>
-                    <p className="text-green-700">
-                      Thank you for reaching out. We'll get back to you shortly.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label
                         htmlFor="name"
@@ -259,11 +254,10 @@ export function Contact() {
                       type="submit"
                       className="w-full bg-gradient-to-r from-[#00a859] to-[#0055a5] text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
                     >
-                      Send Message
+                      Open Google Form
                       <Send className="w-5 h-5" />
                     </button>
                   </form>
-                )}
               </div>
             </div>
           </div>

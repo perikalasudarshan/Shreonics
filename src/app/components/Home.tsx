@@ -20,6 +20,11 @@ export function Home() {
     },
     {
       icon: Gauge,
+      title: "Mechanical Engineering",
+      description: "Structural design, simulation, prototyping, and manufacturing-ready parts",
+    },
+    {
+      icon: Gauge,
       title: "Measurement",
       description: "Precision monitoring and data acquisition systems",
     },

@@ -4,6 +4,18 @@ export function Services() {
   const services = [
     {
       icon: Wrench,
+      title: "Mechanical Engineering Services",
+      color: "from-[#00a859] to-[#0055a5]",
+      items: [
+        "Mechanical design & product development",
+        "Simulation & FEA/thermal/vibration analysis",
+        "Prototyping and testing models",
+        "CNC, sheet metal and injection molding support",
+        "Enclosure/housing design for electronics",
+      ],
+    },
+    {
+      icon: Wrench,
       title: "Engineering Services",
       color: "from-[#00a859] to-[#0055a5]",
       items: [
@@ -86,6 +98,50 @@ export function Services() {
         </div>
       </section>
 
+      {/* Mechanical Engineering Capabilities (modular blocks) */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Mechanical Engineering Capabilities</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">We provide modular mechanical engineering support aligned with your product development lifecycle.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
+              <h3 className="font-bold text-xl mb-3">Design & Development</h3>
+              <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                <li>3D CAD modeling</li>
+                <li>DFM / DFA</li>
+                <li>Enclosure/housing design</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
+              <h3 className="font-bold text-xl mb-3">Simulation & Analysis</h3>
+              <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                <li>FEA & strength validation</li>
+                <li>Thermal and CFD modeling</li>
+                <li>Vibration & fatigue analysis</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
+              <h3 className="font-bold text-xl mb-3">Prototyping</h3>
+              <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                <li>3D printing</li>
+                <li>CNC prototype parts</li>
+                <li>Functional validation models</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow">
+              <h3 className="font-bold text-xl mb-3">Manufacturing Support</h3>
+              <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                <li>CNC machining</li>
+                <li>Sheet metal & laser cutting</li>
+                <li>Injection molding production</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,7 +208,9 @@ export function Services() {
             Whether you need a complete system or specific engineering support, we're here to help
           </p>
           <a
-            href="/contact"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc8EwSNiDhIHHjVt08RUtj235tdxul5aqw7JIMNpoDwJ0P6cA/viewform?usp=dialog"
+            target="_blank"
+            rel="noreferrer"
             className="inline-block bg-gradient-to-r from-[#00a859] to-[#0055a5] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
           >
             Contact Us Today
